@@ -28,7 +28,7 @@ export const BenefitItem = ({
       <h3 className=" font-bold font-montserrat mb-5 text-center">{title}</h3>
       <p className="text-center mb-8">{text}</p>
       <AnchorLink
-        className="font-bold underline text-primary-500 hover:text-primary-300"
+        className="font-bold text-primary-500 hover:text-primary-300 transition"
         href={`#${linkTo}`}
         onClick={() => setSelectedPage(SelectedPage.ContactUs)}
       >
