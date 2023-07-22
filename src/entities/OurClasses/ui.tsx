@@ -25,7 +25,10 @@ export const OurClasses = ({ setSelectedPage }: IOurClassesProps) => {
           <ul className="w-[2800px] flex gap-5">
             {classes.map((classItem) => {
               return (
-                <li key={`${classItem.title}-${classItem.image}`}>
+                <li
+                  className="z-10"
+                  key={`${classItem.title}-${classItem.image}`}
+                >
                   <Class
                     image={classItem.image}
                     title={classItem.title}
