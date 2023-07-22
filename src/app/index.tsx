@@ -4,6 +4,7 @@ import { SelectedPage } from "@/shared/types/enums";
 import { Home } from "@/entities/Home";
 import { Benefits } from "@/entities/Benefits";
 import { OurClasses } from "@/entities/OurClasses";
+import { ContactUs } from "@/entities/ContactUs";
 
 export function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -35,6 +36,7 @@ export function App() {
       <Home setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
       <OurClasses setSelectedPage={setSelectedPage} />
+      <ContactUs setSelectedPage={setSelectedPage} />
     </div>
   );
 }
