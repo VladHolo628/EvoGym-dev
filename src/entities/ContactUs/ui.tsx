@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { SectionHeading } from "@/shared/ui/SectionHeading";
 import ContactUsGraphics from "@/shared/assets/ContactUsPageGraphic.png";
-import React from "react";
 
 export const ContactUs = ({ setSelectedPage }: IContactUsProps) => {
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
@@ -15,7 +14,6 @@ export const ContactUs = ({ setSelectedPage }: IContactUsProps) => {
 
   const {
     register,
-    trigger,
     handleSubmit,
     formState: { errors },
   } = useForm();
