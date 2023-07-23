@@ -31,36 +31,14 @@ export const Navbar = () => {
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
                 <div className={`${flexBetween} gap-8 text-sm`}>
-                  <Link
-                    page="Home"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  ></Link>
-                  <Link
-                    page="Benefits"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  ></Link>
-                  <Link
-                    page="Our Classes"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  ></Link>
-                  <Link
-                    page="Contact Us"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  ></Link>
+                  <Link page="Home"></Link>
+                  <Link page="Benefits"></Link>
+                  <Link page="Our Classes"></Link>
+                  <Link page="Contact Us"></Link>
                 </div>
                 <div className={`${flexBetween} gap-8`}>
-                  <Link
-                    page="Sign In"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <ActionButton setSelectedPage={setSelectedPage}>
-                    Become a member
-                  </ActionButton>
+                  <Link page="Sign In" />
+                  <ActionButton>Become a member</ActionButton>
                 </div>
               </div>
             ) : (
@@ -75,11 +53,7 @@ export const Navbar = () => {
         </div>
       </div>
       {!isAboveMediumScreens && isMenuToggled && (
-        <Sidebar
-          setIsMenuToggled={setIsMenuToggled}
-          setSelectedPage={setSelectedPage}
-          selectedPage={selectedPage}
-        />
+        <Sidebar setIsMenuToggled={setIsMenuToggled} />
       )}
     </nav>
   );

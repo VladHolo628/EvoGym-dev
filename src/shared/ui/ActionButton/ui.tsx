@@ -1,11 +1,11 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { IActionButtonProps } from "./types";
 import { SelectedPage } from "@/shared/types/enums";
+import { usePageControlStore } from "@/shared/store/PageControlStore";
 
-export const ActionButton = ({
-  children,
-  setSelectedPage,
-}: IActionButtonProps) => {
+export const ActionButton = ({ children }: IActionButtonProps) => {
+  const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
+
   return (
     <AnchorLink
       onClick={() => setSelectedPage(SelectedPage.ContactUs)}

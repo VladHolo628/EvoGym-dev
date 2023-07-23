@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 export const ContactForm = () => {
-  const inputStyles = `mb-5 w-full rounded-lg bg-primary-300
+  const inputStyles = `mt-5 mb-2 w-full rounded-lg bg-primary-300
     px-5 py-3 placeholder-white relative`;
 
   const emailPattern =

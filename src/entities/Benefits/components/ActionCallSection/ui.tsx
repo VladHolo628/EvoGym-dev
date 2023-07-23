@@ -1,11 +1,8 @@
 import { ActionButton } from "@/shared/ui/ActionButton";
-import { IActionCallSectionProps } from "./types";
 import BenefitsGraphic from "@/shared/assets/BenefitsPageGraphic.png";
 import { motion } from "framer-motion";
 
-export const ActionCallSection = ({
-  setSelectedPage,
-}: IActionCallSectionProps) => {
+export const ActionCallSection = () => {
   return (
     <div className="md:flex justify-between items-center gap-20 md:mt-28">
       <motion.img
@@ -55,9 +52,7 @@ export const ActionCallSection = ({
         </p>
         <div className="relative mt-10">
           <div className="before:absolute before:z-[-1] before:-bottom-30 before:right-40 before:content-sparkles">
-            <ActionButton setSelectedPage={setSelectedPage}>
-              Join Now
-            </ActionButton>
+            <ActionButton>Join Now</ActionButton>
           </div>
         </div>
       </motion.div>

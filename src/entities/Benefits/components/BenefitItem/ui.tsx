@@ -2,6 +2,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 import { IBenefitItem } from "./types";
 import { SelectedPage } from "@/shared/types/enums";
+import { usePageControlStore } from "@/shared/store/PageControlStore";
 
 const childrenVariant = {
   hidden: { opacity: 0, scale: 0.5, x: -10 },
@@ -14,8 +15,8 @@ export const BenefitItem = ({
   text,
   linkText,
   linkTo,
-  setSelectedPage,
 }: IBenefitItem) => {
+  const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
   return (
     <motion.div
       initial="hidden"

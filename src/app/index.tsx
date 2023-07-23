@@ -1,5 +1,5 @@
 import { Navbar } from "@/widgets/Navbar";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { SelectedPage } from "@/shared/types/enums";
 import { Home } from "@/entities/Home";
 import { Benefits } from "@/entities/Benefits";
