@@ -7,8 +7,6 @@ import { OurClasses } from "@/entities/OurClasses";
 import { ContactUs } from "@/entities/ContactUs";
 import { Footer } from "@/widgets/Footer";
 
-
-
 export function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
     SelectedPage.Home
