@@ -6,21 +6,23 @@ import { Benefits } from "@/entities/Benefits";
 import { OurClasses } from "@/entities/OurClasses";
 import { ContactUs } from "@/entities/ContactUs";
 import { Footer } from "@/widgets/Footer";
+import { usePageControlStore } from "@/shared/store/PageControlStore";
 
 export function App() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home
+  const setIsTopOfPage: (value: boolean) => void = usePageControlStore(
+    (state) => state.setIsTopOfPage
   );
-  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
+
+  const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
 
   useEffect(() => {
     const scrollHandler = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
         setSelectedPage(SelectedPage.Home);
-      } else if (window.scrollY !== 0) {
-        setIsTopOfPage(false);
+        return;
       }
+      setIsTopOfPage(false);
     };
 
     window.addEventListener("scroll", scrollHandler);
@@ -29,15 +31,11 @@ export function App() {
   });
   return (
     <div className="app bg-gray-50">
-      <Navbar
-        isTopOfPage={isTopOfPage}
-        selectedPage={selectedPage}
-        setSelectedPage={setSelectedPage}
-      />
-      <Home setSelectedPage={setSelectedPage} />
-      <Benefits setSelectedPage={setSelectedPage} />
-      <OurClasses setSelectedPage={setSelectedPage} />
-      <ContactUs setSelectedPage={setSelectedPage} />
+      <Navbar />
+      <Home />
+      <Benefits />
+      <OurClasses />
+      <ContactUs />
       <Footer />
     </div>
   );

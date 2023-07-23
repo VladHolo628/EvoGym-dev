@@ -2,13 +2,15 @@ import useMediaQuery from "@/shared/hooks/useMediaQuery";
 import HomePageText from "@/shared/assets/HomePageText.png";
 import HomePageGraphic from "@/shared/assets/HomePageGraphic.png";
 import { SelectedPage } from "@/shared/types/enums";
-import { IHomeProps } from "./types";
 import { ActionButton } from "@/shared/ui/ActionButton";
 import { Sponsors } from "@/widgets/Sponsors";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
+import { usePageControlStore } from "@/shared/store/PageControlStore";
 
-export const Home = ({ setSelectedPage }: IHomeProps) => {
+export const Home = () => {
+  const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
+
   const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
 
   return (

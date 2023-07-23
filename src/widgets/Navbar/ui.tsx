@@ -5,14 +5,14 @@ import { Link } from "@/shared/ui/Link/ui";
 import { ActionButton } from "@/shared/ui/ActionButton";
 import { Sidebar } from "./components/Sidebar/ui";
 import Logo from "@/shared/assets/Logo.png";
-import { INavbarProps } from "./types";
+import { usePageControlStore } from "@/shared/store/PageControlStore";
 
-export const Navbar = ({
-  isTopOfPage,
-  selectedPage,
-  setSelectedPage,
-}: INavbarProps) => {
+export const Navbar = () => {
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
+
+  const isTopOfPage = usePageControlStore((state) => state.isTopOfPage);
+  const selectedPage = usePageControlStore((state) => state.selectedPage);
+  const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
 
   const flexBetween = "flex items-center justify-between";
   const navigationBackground = `${

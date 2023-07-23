@@ -1,11 +1,13 @@
 import { SelectedPage } from "@/shared/types/enums";
-import { IContactUsProps } from "./types";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/shared/ui/SectionHeading";
 import ContactUsGraphics from "@/shared/assets/ContactUsPageGraphic.png";
 import { ContactForm } from "@/widgets/ContactForm";
+import { usePageControlStore } from "@/shared/store/PageControlStore";
 
-export const ContactUs = ({ setSelectedPage }: IContactUsProps) => {
+export const ContactUs = () => {
+  const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
+
   return (
     <section id={SelectedPage.ContactUs} className="py-20 w-5/6 mx-auto">
       <motion.div
@@ -66,8 +68,6 @@ export const ContactUs = ({ setSelectedPage }: IContactUsProps) => {
               />
             </div>
           </motion.div>
-
-          {/* IMG */}
         </motion.div>
       </motion.div>
     </section>

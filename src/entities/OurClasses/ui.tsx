@@ -1,11 +1,12 @@
-import { IOurClassesProps } from "./types";
 import { motion } from "framer-motion";
 import { SelectedPage } from "@/shared/types/enums";
 import { SectionHeading } from "@/shared/ui/SectionHeading";
 import { classes } from "./services/classes";
 import { Class } from "./components/Class";
+import { usePageControlStore } from "@/shared/store/PageControlStore";
 
-export const OurClasses = ({ setSelectedPage }: IOurClassesProps) => {
+export const OurClasses = () => {
+  const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
   return (
     <section id={SelectedPage.OurClasses} className="bg-primary-100 py-20">
       <motion.div

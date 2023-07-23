@@ -3,13 +3,13 @@ import {
   UserGroupIcon,
   AcademicCapIcon,
 } from "@heroicons/react/24/solid";
-import { IBenefitsProps } from "./types";
 import { SelectedPage } from "@/shared/types/enums";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/shared/ui/SectionHeading";
 import { BenefitItem } from "./components/BenefitItem";
 import { IBenefitItem } from "./components/BenefitItem/types";
 import { ActionCallSection } from "./components/ActionCallSection";
+import { usePageControlStore } from "@/shared/store/PageControlStore";
 
 const animationContainer = {
   hidden: {},
@@ -18,7 +18,9 @@ const animationContainer = {
   },
 };
 
-export const Benefits = ({ setSelectedPage }: IBenefitsProps) => {
+export const Benefits = () => {
+  const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
+
   const benefits: IBenefitItem[] = [
     {
       icon: <HomeModernIcon className="h-6" />,
