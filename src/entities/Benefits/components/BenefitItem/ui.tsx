@@ -17,6 +17,7 @@ export const BenefitItem = ({
   linkTo,
 }: IBenefitItem) => {
   const setSelectedPage = usePageControlStore((state) => state.setSelectedPage);
+
   return (
     <motion.div
       initial="hidden"

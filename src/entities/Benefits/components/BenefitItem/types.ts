@@ -6,4 +6,5 @@ export interface IBenefitItem {
   text: string;
   linkText: string;
   linkTo: SelectedPage;
+  setSelectedPage: (value: SelectedPage) => void;
 }
